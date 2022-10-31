@@ -32,6 +32,7 @@ apt upgrade -y
  
 echo "############ Instalacion y Configuracion de Aplicaciones"
 apt install htop vim guake qbittorrent -y
+guake &
 wget https://raw.githubusercontent.com/lctec/MintMate/main/guake.desktop
 cp /tmp/guake.desktop ~/.config/autostart
 wget https://raw.githubusercontent.com/lctec/MintMate/main/guake_prefs
@@ -41,6 +42,7 @@ guake --restore-preferences /tmp/guake_prefs
 echo  "############ cambiar Fondo De Pantalla "
 PAUSE
 wget https://github.com/lctec/MintMate/raw/main/Wallpaper.jpg
+sudo cp Wallpaper.jpg /usr/share/backgrounds/linuxmint
 dconf write /org/mate/desktop/background/picture-filename "'/tmp/Wallpaper.jpg'"
 
 echo  "############ Instalacion de Google Chrome"
