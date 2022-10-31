@@ -1,0 +1,35 @@
+[general]
+display-n=0
+display-tab-names=0
+gtk-use-system-default-theme=true
+hide-tabs-if-one-tab=false
+history-size=1000
+max-tab-name-length=100
+mouse-display=true
+open-tab-cwd=true
+prompt-on-quit=true
+quick-open-command-line='gedit %(file_path)s'
+restore-tabs-notify=true
+restore-tabs-startup=true
+save-tabs-when-changed=true
+scroll-keystroke=true
+start-at-login=true
+use-default-font=false
+use-popup=true
+use-scrollbar=true
+use-trayicon=true
+window-halignment=0
+window-height=50
+window-losefocus=false
+window-refocus=false
+window-tabbar=true
+window-width=100
+
+[style/background]
+transparency=100
+
+[style/font]
+allow-bold=true
+palette='#000000000000:#FFFF60605A5A:#B1B1E8E86969:#EAEAD8D89C9C:#5D5DA9A9F6F6:#E8E86A6AFFFF:#8282FFFFF6F6:#DEDED9D9CECE:#313131313131:#F5F58B8B7F7F:#DCDCF8F88F8F:#EEEEE5E5B2B2:#A5A5C7C7FFFF:#DDDDAAAAFFFF:#B6B6FFFFF9F9:#FEFEFFFFFEFE:#DEDED9D9CECE:#171717171717'
+palette-name='Wombat'
+style='Monospace 14'
