@@ -1,0 +1,17 @@
+############# 2022.10.31
+Repositorio Par Configuracion De linux Mint 21 (Mate)
+
+
+
+
+
+#APPPS
+visual code:
+
+https://code.visualstudio.com/Download#
+
+
+
+
+
+apt install htop vim -y
