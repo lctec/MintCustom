@@ -19,8 +19,8 @@ update-grub2
 ##Desinstalacion de Todo lo que no se va a a Usar
 sudo apt remove firefox* -y
 sudo apt purge firefox* -y
-sudo apt autoclean 
-sudo apt autoremove
+sudo apt autoclean -y
+sudo apt autoremove -y
 
 echo "############ Actualizacion del SO "
 PAUSE
