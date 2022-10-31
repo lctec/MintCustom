@@ -3,7 +3,10 @@ apt upgrade -y
 apt install htop vim guake qbittorrent -y
 cd /tmp
 ## cambiar Fondo De Pantalla 
+wget https://github.com/lctec/MintMate/blob/main/Wallpaper.jpg
 dconf write /org/mate/desktop/background/picture-filename "'/tmp/Wallpaper.jpg'"
+
+## Instalacion de Google Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 sudo apt update
