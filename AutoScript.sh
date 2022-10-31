@@ -10,34 +10,43 @@ apt update
 echo  Se Desinstalaran los programas innecesarios
 PAUSE 
 
-##Desinstalacion de Todo lo que no se va a a Usar
-apt remove firefox* -y
-apt purge firefox* -y
-apt autoclean 
-apt autoremove
+echo ##################### Quit Splash Screen  ################### 
+cp /etc/default/grub /etc/default/grub.old
+sed -i '/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/c\GRUB_CMDLINE_LINUX_DEFAULT="noquiet nosplash"' /etc/default/grub
+update-grub2
 
-echo Actualizacion del SO 
+
+##Desinstalacion de Todo lo que no se va a a Usar
+sudo apt remove firefox* -y
+sudo apt purge firefox* -y
+sudo apt autoclean 
+sudo apt autoremove
+
+echo "############ Actualizacion del SO "
 PAUSE
 apt upgrade -y
  
-echo Instalacion y Configuracion de Aplicaciones
-wget https://github.com/lctec/MintMate/blob/fc000b25d75703059f973d9aa4934ce9fbb52430/guake.desktop
-cp /tmp/guake.desktop ~/.config/autostart -y
+echo "############ Instalacion y Configuracion de Aplicaciones"
 apt install htop vim guake qbittorrent -y
+wget https://raw.githubusercontent.com/lctec/MintMate/main/guake.desktop
+cp /tmp/guake.desktop ~/.config/autostart
+wget https://raw.githubusercontent.com/lctec/MintMate/main/guake_prefs
+guake --restore-preferences /tmp/guake_prefs
 
-echo  cambiar Fondo De Pantalla 
+exit
+echo  "############ cambiar Fondo De Pantalla "
 PAUSE
 wget https://github.com/lctec/MintMate/raw/main/Wallpaper.jpg
 dconf write /org/mate/desktop/background/picture-filename "'/tmp/Wallpaper.jpg'"
 
-echo  Instalacion de Google Chrome
+echo  "############ Instalacion de Google Chrome"
 PAUSE
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 sudo apt update
 sudo apt install google-chrome-stable
 
-echo  Instalacion De Microsoft Edge
+echo  "############ Instalacion De Microsoft Edge"
 PAUSE
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -45,7 +54,7 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge sta
 sudo rm microsoft.gpg
 sudo apt update && sudo apt install microsoft-edge-stable
 
-echo  Instalacion de Microsoft Code
+echo "############  Instalacion de Microsoft Code"
 PAUSE
 
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
