@@ -31,7 +31,7 @@ PAUSE
 apt upgrade -y
  
 echo "############ Instalacion y Configuracion de Aplicaciones"
-apt install htop vim guake qbittorrent -y
+apt install htop vim guake qbittorrent gparted -y
 guake &
 wget https://raw.githubusercontent.com/lctec/MintMate/main/guake.desktop
 cp /tmp/guake.desktop ~/.config/autostart
