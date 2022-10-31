@@ -4,7 +4,12 @@ function PAUSE(){
  echo ""
  clear
 }
-##############################################################################################################33
+##############################################################################################################
+
+echo #### SELECCCIONAR REPOSITORIOS RAPIDOS
+software-sources
+
+pause
 cd /tmp
 apt update
 echo  Se Desinstalaran los programas innecesarios
