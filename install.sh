@@ -1,7 +1,6 @@
 #!/bin/bash
 username=$(whoami)
+home=$(PWD)
 cd /tmp
-
-sudo MintMate $username
-echo "Usuario Inicial"
-whoami
+wget https://raw.githubusercontent.com/lctec/MintMate/main/MintMate.sh
+sudo MintMate.sh $username $home
