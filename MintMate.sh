@@ -1,32 +1,36 @@
 #!/bin/bash
+#################################################################################
+#######################  ejecutado con sudo   ###################################
+#################################################################################
 
-####################### DECLARACION FUNCIONES ###################################################################
+####################### DECLARACION VARIABLES ###################################
+username=$1
+home=$2
+####################### DECLARACION FUNCIONES ###################################
 function PAUSE(){
  read -s -n 1 -p "Press any key to continue . . ."
  echo ""
  clear
 }
-##############################################################################################################
+#################################################################################
 
-echo #### SELECCCIONAR REPOSITORIOS RAPIDOS
+echo "#### SELECCCIONAR REPOSITORIOS RAPIDOS DE FORMA MANUAL"
+PAUSE
 software-sources
-
-pause
+#################################################################################
+echo  Se Desinstalaran los programas innecesarios
+PAUSE
 cd /tmp
 apt update
-echo  Se Desinstalaran los programas innecesarios
-PAUSE 
+apt remove firefox* pidgin* hexchat* -y
+apt autoclean -y
+apt autoremove -y
 
-echo ##################### Quit Splash Screen  ################### 
+echo "##################### Quit Splash Screen  ###################"
+PAUSE 
 cp /etc/default/grub /etc/default/grub.old
 sed -i '/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/c\GRUB_CMDLINE_LINUX_DEFAULT="noquiet nosplash"' /etc/default/grub
 update-grub2
-
-##Desinstalacion de Todo lo que no se va a a Usar
-sudo apt remove firefox* -y
-sudo apt purge firefox* -y
-sudo apt autoclean -y
-sudo apt autoremove -y
 
 echo "############ Actualizacion del SO "
 PAUSE
@@ -34,18 +38,17 @@ apt upgrade -y
  
 echo "############ Instalacion y Configuracion de Aplicaciones"
 apt install htop vim guake qbittorrent gparted -y
-guake &
-wget https://raw.githubusercontent.com/lctec/MintMate/main/guake.desktop
-cp /tmp/guake.desktop ~/.config/autostart
-wget https://raw.githubusercontent.com/lctec/MintMate/main/guake_prefs
-guake --restore-preferences /tmp/guake_prefs
+sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/guake.desktop
+sudo -u$username cp /tmp/guake.desktop ~/.config/autostart
+sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/guake_prefs
+sudo -u$username guake --restore-preferences /tmp/guake_prefs
 
 
 echo  "############ cambiar Fondo De Pantalla "
 PAUSE
-wget https://github.com/lctec/MintMate/raw/main/Wallpaper.jpg
-sudo cp Wallpaper.jpg /usr/share/backgrounds/linuxmint
-dconf write /org/mate/desktop/background/picture-filename "'/tmp/Wallpaper.jpg'"
+sudo -u$username wget https://github.com/lctec/MintCustom/raw/main/Wallpaper.jpg
+sudo -u$username  cp Wallpaper.jpg /usr/share/backgrounds/linuxmint
+sudo -u$username dconf write /org/mate/desktop/background/picture-filename "'/tmp/Wallpaper.jpg'"
 
 echo  "############ Instalacion de Google Chrome"
 PAUSE
