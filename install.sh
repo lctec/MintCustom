@@ -2,5 +2,5 @@
 username=$(whoami)
 home=$(PWD)
 cd /tmp
-wget https://raw.githubusercontent.com/lctec/MintMate/main/MintMate.sh
+wget https://raw.githubusercontent.com/lctec/MintCustom/main/MintMate.sh
 sudo MintMate.sh $username $home
