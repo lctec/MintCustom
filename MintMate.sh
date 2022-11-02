@@ -28,7 +28,7 @@ echo -e "${BRed}### SELECCCIONAR REPOSITORIOS RAPIDOS DE FORMA MANUAL"
 PAUSE
 software-sources
 #################################################################################
-echo  Se Desinstalaran los programas innecesarios
+echo  "${BRed} Se Desinstalaran los programas innecesarios"
 PAUSE
 cd /tmp
 apt update
@@ -54,11 +54,6 @@ sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/gu
 sudo -u$username guake --restore-preferences /tmp/guake_prefs
 
 
-echo -e "${BRed}############ cambiar Fondo De Pantalla "
-PAUSE
-sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/Wallpaper.jpg
-cp Wallpaper.jpg /usr/share/backgrounds/linuxmint
-#sudo -u$username -l dconf write /org/mate/desktop/background/picture-filename "'/usr/share/backgrounds/linuxmint/Wallpaper.jpg'"
 
 echo -e "${BRed}############ Instalacion de Google Chrome"
 PAUSE
