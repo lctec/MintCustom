@@ -47,7 +47,7 @@ sudo -u$username guake --restore-preferences /tmp/guake_prefs
 echo  "############ cambiar Fondo De Pantalla "
 PAUSE
 sudo -u$username wget https://github.com/lctec/MintCustom/raw/main/Wallpaper.jpg
-sudo -u$username  cp Wallpaper.jpg /usr/share/backgrounds/linuxmint
+cp Wallpaper.jpg /usr/share/backgrounds/linuxmint
 sudo -u$username dconf write /org/mate/desktop/background/picture-filename "'/tmp/Wallpaper.jpg'"
 
 echo  "############ Instalacion de Google Chrome"
