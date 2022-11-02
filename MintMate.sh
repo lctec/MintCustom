@@ -60,7 +60,7 @@ sudo -u$username wget https://github.com/lctec/MintCustom/raw/main/Wallpaper.jpg
 cp Wallpaper.jpg /usr/share/backgrounds/linuxmint
 sudo -u$username dconf write /org/mate/desktop/background/picture-filename "'/usr/share/backgrounds/linuxmint/Wallpaper.jpg'"
 
-echo  "############ Instalacion de Google Chrome"
+echo -e "${BRed}############ Instalacion de Google Chrome"
 PAUSE
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
