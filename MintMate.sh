@@ -24,7 +24,7 @@ function PAUSE(){
 }
 #################################################################################
 
-echo -e "I ${BRed}### SELECCCIONAR REPOSITORIOS RAPIDOS DE FORMA MANUAL"
+echo -e "${BRed}### SELECCCIONAR REPOSITORIOS RAPIDOS DE FORMA MANUAL"
 PAUSE
 software-sources
 #################################################################################
@@ -36,17 +36,17 @@ apt remove firefox* pidgin* hexchat* -y
 apt autoclean -y
 apt autoremove -y
 
-echo -e "I ${BRed}#################### Quit Splash Screen  ###################"
+echo -e "${BRed}#################### Quit Splash Screen  ###################"
 PAUSE 
 cp /etc/default/grub /etc/default/grub.old
 sed -i '/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/c\GRUB_CMDLINE_LINUX_DEFAULT="noquiet nosplash"' /etc/default/grub
 update-grub2
 
-echo -e "I ${BRed}########### Actualizacion del SO "
+echo -e "${BRed}########### Actualizacion del SO "
 PAUSE
 apt upgrade -y
  
-echo -e "I ${BRed}########### Instalacion y Configuracion de Aplicaciones"
+echo -e "${BRed}########### Instalacion y Configuracion de Aplicaciones"
 apt install htop vim guake qbittorrent gparted -y
 sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/guake.desktop
 sudo -u$username cp /tmp/guake.desktop ~/.config/autostart
@@ -54,11 +54,11 @@ sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/gu
 sudo -u$username guake --restore-preferences /tmp/guake_prefs
 
 
-echo  "############ cambiar Fondo De Pantalla "
+echo -e "${BRed}############ cambiar Fondo De Pantalla "
 PAUSE
 sudo -u$username wget https://github.com/lctec/MintCustom/raw/main/Wallpaper.jpg
 cp Wallpaper.jpg /usr/share/backgrounds/linuxmint
-sudo -u$username dconf write /org/mate/desktop/background/picture-filename "'/tmp/Wallpaper.jpg'"
+sudo -u$username dconf write /org/mate/desktop/background/picture-filename "'/usr/share/backgrounds/linuxmint/Wallpaper.jpg'"
 
 echo  "############ Instalacion de Google Chrome"
 PAUSE
@@ -67,8 +67,8 @@ sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 sudo apt update
 sudo apt install google-chrome-stable -y
 
-echo  "############ Instalacion De Microsoft Edge"
-echo -e "I ${BRed}###########  Instalacion de Microsoft Code"
+echo -e "${BRed}############ Instalacion De Microsoft Edge"
+echo -e "${BRed}###########  Instalacion de Microsoft Code"
 PAUSE
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 #wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
