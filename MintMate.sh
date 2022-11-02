@@ -58,7 +58,7 @@ echo -e "${BRed}############ cambiar Fondo De Pantalla "
 PAUSE
 sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/Wallpaper.jpg
 cp Wallpaper.jpg /usr/share/backgrounds/linuxmint
-sudo -u$username dconf write /org/mate/desktop/background/picture-filename "'/usr/share/backgrounds/linuxmint/Wallpaper.jpg'"
+sudo -u$username -l dconf write /org/mate/desktop/background/picture-filename "'/usr/share/backgrounds/linuxmint/Wallpaper.jpg'"
 
 echo -e "${BRed}############ Instalacion de Google Chrome"
 PAUSE
