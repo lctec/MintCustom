@@ -24,7 +24,7 @@ function PAUSE(){
 }
 #################################################################################
 
-echo "#### SELECCCIONAR REPOSITORIOS RAPIDOS DE FORMA MANUAL"
+echo -e "I ${BRed}### SELECCCIONAR REPOSITORIOS RAPIDOS DE FORMA MANUAL"
 PAUSE
 software-sources
 #################################################################################
@@ -36,17 +36,17 @@ apt remove firefox* pidgin* hexchat* -y
 apt autoclean -y
 apt autoremove -y
 
-echo "##################### Quit Splash Screen  ###################"
+echo -e "I ${BRed}#################### Quit Splash Screen  ###################"
 PAUSE 
 cp /etc/default/grub /etc/default/grub.old
 sed -i '/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/c\GRUB_CMDLINE_LINUX_DEFAULT="noquiet nosplash"' /etc/default/grub
 update-grub2
 
-echo "############ Actualizacion del SO "
+echo -e "I ${BRed}########### Actualizacion del SO "
 PAUSE
 apt upgrade -y
  
-echo "############ Instalacion y Configuracion de Aplicaciones"
+echo -e "I ${BRed}########### Instalacion y Configuracion de Aplicaciones"
 apt install htop vim guake qbittorrent gparted -y
 sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/guake.desktop
 sudo -u$username cp /tmp/guake.desktop ~/.config/autostart
@@ -68,7 +68,7 @@ sudo apt update
 sudo apt install google-chrome-stable -y
 
 echo  "############ Instalacion De Microsoft Edge"
-echo "############  Instalacion de Microsoft Code"
+echo -e "I ${BRed}###########  Instalacion de Microsoft Code"
 PAUSE
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 #wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
