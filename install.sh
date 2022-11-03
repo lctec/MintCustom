@@ -3,9 +3,12 @@ username=$(whoami)
 home=$PWD
 cd /tmp
 wget https://raw.githubusercontent.com/lctec/MintCustom/main/MintMate.sh
+####echo ejecucion con Sudo
 sudo bash MintMate.sh $username $home
 
 
+## ejecucion con usuario
+cd /tmp
 echo -e "${BRed}############ cambiar Fondo De Pantalla "
 PAUSE
 sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/Wallpaper.jpg

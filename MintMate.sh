@@ -49,9 +49,6 @@ apt upgrade -y
 echo -e "${BRed}########### Instalacion de Aplicaciones"
 apt install htop vim guake qbittorrent gparted -y
 
-
-
-
 echo -e "${BRed}############ Instalacion de Google Chrome"
 PAUSE
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
