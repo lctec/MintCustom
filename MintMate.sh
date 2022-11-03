@@ -1,9 +1,9 @@
 #!/bin/bash
-#################################################################################
-#######################  ejecutado con sudo   ###################################
-#################################################################################
+###################################################################################################
+######################################  ejecutado con sudo   ######################################
+###################################################################################################
 
-####################### DECLARACION VARIABLES ###################################
+###################################### DECLARACION VARIABLES ######################################
 # Bold
 BBlack='\033[1;30m'       # Black
 BRed='\033[1;31m'         # Red
@@ -16,18 +16,18 @@ BWhite='\033[1;37m'       # White
 
 username=$1
 home=$2
-####################### DECLARACION FUNCIONES ###################################
+################################### DECLARACION FUNCIONES #########################################
 function PAUSE(){
  read -s -n 1 -p "Press any key to continue . . ."
  echo ""
  clear
 }
-#################################################################################
+###################################################################################################
 
 echo -e "${BRed}### SELECCCIONAR REPOSITORIOS RAPIDOS DE FORMA MANUAL"
 PAUSE
 software-sources
-#################################################################################
+###################################################################################################
 echo  "${BRed} Se Desinstalaran los programas innecesarios"
 PAUSE
 cd /tmp
@@ -70,18 +70,5 @@ sudo apt-get install apt-transport-https
 sudo apt update && sudo apt install microsoft-edge-stable -y
 sudo apt-get install code -y # or code-insiders
 
-#wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-#sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-#sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-#sudo apt-get install apt-transport-https
-#sudo apt-get update
-#sudo apt-get install code -y # or code-insiders
-
 ## alternativa Chromium 
 ## sudo apt install chromium-browser
-
-# save settings
-#guake --save-preferences /tmp/guake_prefs
-
-# load settings
-#guake --restore-preferences /tmp/guake_prefs
