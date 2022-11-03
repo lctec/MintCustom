@@ -18,7 +18,7 @@ username=$1
 home=$2
 ################################### DECLARACION FUNCIONES #########################################
 function PAUSE(){
- read -s -n 1 -p "Press any key to continue . . ."
+ #read -s -n 1 -p "Press any key to continue . . ."
  echo ""
  clear
 }
@@ -56,7 +56,7 @@ sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 sudo apt update
 sudo apt install google-chrome-stable -y
 
-echo -e "${BRed}############ Instalacion De Microsoft Edge"
+echo -e "${BRed}############ Instalacion De Microsoft Edgels /t "
 echo -e "${BRed}###########  Instalacion de Microsoft Code"
 PAUSE
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -67,8 +67,12 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge sta
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo rm microsoft.gpg
 sudo apt-get install apt-transport-https
-sudo apt update && sudo apt install microsoft-edge-stable -y
-sudo apt-get install code -y # or code-insiders
+sudo apt update && sudo apt install microsoft-edge-stable code -y
+
+wget https://raw.githubusercontent.com/lctec/MintCustom/main/Wallpaper.jpg
+cp Wallpaper.jpg /usr/share/backgrounds/linuxmint
+
 
 ## alternativa Chromium 
+
 ## sudo apt install chromium-browser
