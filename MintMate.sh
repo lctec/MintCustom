@@ -46,12 +46,9 @@ echo -e "${BRed}########### Actualizacion del SO "
 PAUSE
 apt upgrade -y
  
-echo -e "${BRed}########### Instalacion y Configuracion de Aplicaciones"
+echo -e "${BRed}########### Instalacion de Aplicaciones"
 apt install htop vim guake qbittorrent gparted -y
-sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/guake.desktop
-sudo -u$username cp /tmp/guake.desktop ~/.config/autostart
-sudo -u$username wget https://raw.githubusercontent.com/lctec/MintCustom/main/guake_prefs
-sudo -u$username guake --restore-preferences /tmp/guake_prefs
+
 
 
 
