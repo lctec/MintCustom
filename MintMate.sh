@@ -32,7 +32,7 @@ echo  "${BRed} Se Desinstalaran los programas innecesarios"
 PAUSE
 cd /tmp
 apt update
-apt remove firefox* pidgin* hexchat* -y
+apt remove firefox* pidgin* hexchat* transmission*-y
 apt autoclean -y
 apt autoremove -y
 
