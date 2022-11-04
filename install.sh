@@ -7,7 +7,7 @@ wget https://raw.githubusercontent.com/lctec/MintCustom/main/MintMate.sh
 sudo bash MintMate.sh $username $home
 
 
-###################################### ejecucion con usuario ######################################
+###################################### ejecucion con usuario PARA MATE######################################
 cd /tmp
 echo -e "${BRed}############ cambiar Fondo De Pantalla "
 PAUSE
@@ -21,6 +21,14 @@ chmod  700 ~/.config/autostart
 cp /tmp/guake.desktop ~/.config/autostart
 wget https://raw.githubusercontent.com/lctec/MintCustom/main/guake_prefs
 guake --restore-preferences /tmp/guake_prefs
+
+###################################### ejecucion con usuario PARA XFCE######################################
+# Monitoreo de cmabios en xfce
+#xfconf-query -c xfce4-desktop -m
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual1/workspace0/last-image -s /usr/share/backgrounds/linuxmint/Wallpaper.jpg
+
+/usr/share/backgrounds/linuxmint/default_background.jpg'
 
 
 ###################################### COMENTARIOS ######################################
