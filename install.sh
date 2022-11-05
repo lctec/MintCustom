@@ -4,7 +4,7 @@ home=$PWD
 cd /tmp
 wget https://raw.githubusercontent.com/lctec/MintCustom/main/MintMate.sh
 ####################################### ejecucion con Sudo ########################################
-#sudo bash MintMate.sh $username $home
+sudo bash MintMate.sh $username $home
 LMflavor=$(cat /etc/linuxmint/info | grep EDITION)
 cd /tmp
 
